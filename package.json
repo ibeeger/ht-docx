@@ -1,0 +1,16 @@
+{
+  "name": "ht-docx",
+  "version": "1.0.2",
+  "description": "html to docx , htmlstring to docx",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "ht-docx",
+    "docx",
+    "word"
+  ],
+  "author": "ibeeger",
+  "license": "ISC"
+}
