@@ -1,10 +1,14 @@
 {
   "name": "ht-docx",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "html to docx , htmlstring to docx",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibeeger/ht-docx.git"
   },
   "keywords": [
     "ht-docx",
@@ -12,5 +16,9 @@
     "word"
   ],
   "author": "ibeeger",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibeeger/ht-docx/issues"
+  },
+  "homepage": "https://github.com/ibeeger/ht-docx#readme"
 }

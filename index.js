@@ -1,8 +1,8 @@
 /*
  * @Author: willclass
  * @Date:   2016-08-31 10:17:46
- * @Last Modified by:   willclass
- * @Last Modified time: 2016-09-01 11:29:44
+ * @Last Modified by:   ibeeger
+ * @Last Modified time: 2016-09-09 14:54:29
  */
 
 'use strict';
@@ -33,7 +33,7 @@ function Docx(arg, opts) {
 	assert(opts.hasOwnProperty("pandoc"), "没有配置pandoc路径");
 	this.pandoc = opts.pandoc;
 	this.format = opts.format || "A3";
-	this.cols = opts.cols || 3;
+	this.cols = opts.cols || 0;
 	this.orientation = opts.orientation || "landscape";
 };
 
@@ -75,19 +75,21 @@ Docx.prototype.exec = function(filename, callback) {
 	if (this.toPath) {
 		outfile = this.toPath;
 	}
-	let child = childprocess.spawn(this.pandoc, ["--reference-docx=./template/" + this.format + "_" + this.cols + "_" + this.orientation + ".docx", 
+	let tmpName = this.cols ==0 ? this.format+"_"+this.orientation+".docx" : this.format+"_"+this.cols+"_"+this.orientation+".docx";
+	let child = childprocess.spawn(this.pandoc, ["--reference-docx="+__dirname+"/template/" + tmpName, 
 					"-s", filename, 
 					"-o", outfile]);
 	let str = [];
 	child.stdout.on('data', (data) => {
 		str.push(data);
-		console.log(`stdout: ${data}`);
+		// console.log(`stdout: ${data}`);
 	});
 
 	child.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
 	});
 	child.on("close",function(){
+		
 	})
 	child.on('exit', function(code) {
 		callback(str);
