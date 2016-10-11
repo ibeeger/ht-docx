@@ -29,5 +29,9 @@ node test/demo.js ~/Documents/FE/esources/test/pandoc/a.html
 后面持续更新
 
 
+####注意事项
+在settings.xml 增加 
+\<w:evenAndOddHeaders w:val="1"/>
+
 
 
