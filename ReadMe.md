@@ -5,13 +5,13 @@
 
 
 > var Docx = require("ht-docx");		
+> 
 > var Item = new Docx(filepath || string,{   
-	pandoc:"/usr/local/bin/pandoc",   
-	cols:"2",   
-	format:"A4",   
-	filename:"高考真题",
-	//orientation: "portrait",    
-});			
+>	pandoc:"/usr/local/bin/pandoc",   
+>	cols:"2",   
+>	format:"A3",   
+>	//orientation: "portrait",    
+>});			
 
 > Item.toFile("bcdef.docx",function(){	  
 	console.log(arguments)     
