@@ -2,7 +2,7 @@
  * @Author: willclass
  * @Date:   2016-08-31 10:17:46
  * @Last Modified by:   ibeeger
- * @Last Modified time: 2016-11-16 11:19:50
+ * @Last Modified time: 2017-12-15 17:06:09
  */
 
 'use strict';
@@ -73,6 +73,14 @@ Docx.prototype.exec = function(filename, callback) {
 		outfile = this.toPath;
 	}
 	let tmpName = this.cols ==0 ? this.format+"_"+this.orientation+".docx" : this.format+"_"+this.cols+"_"+this.orientation+".docx";
+	let hasFile = fs.existsSync(__dirname+"/template/" + tmpName);
+
+	if (!hasFile) {
+		console.warn("模板配置不正确，请重新配置");
+		callback(new Error("模板配置不正确，请重新配置"))
+		return;
+	};
+	
 	let child = childprocess.spawn(this.pandoc, ["--reference-docx="+__dirname+"/template/" + tmpName, 
 					"-s", filename, 
 					"-o", outfile]);

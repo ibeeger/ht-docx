@@ -2,7 +2,7 @@
 * @Author: willclass
 * @Date:   2016-08-31 10:21:57
 * @Last Modified by:   ibeeger
-* @Last Modified time: 2016-10-14 14:31:38
+* @Last Modified time: 2017-12-15 16:59:23
 */
 
 'use strict';
@@ -15,7 +15,7 @@ var file = process.argv[2];
 
 var Item = new Docx(file,{
 	pandoc:"/usr/local/bin/pandoc",
-	cols:"2",
+	cols:"3",
 	format:"A3",
 	// orientation: "portrait",
 });
