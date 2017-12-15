@@ -2,11 +2,10 @@
  * @Author: willclass
  * @Date:   2016-08-31 10:17:46
  * @Last Modified by:   ibeeger
- * @Last Modified time: 2016-09-09 14:54:29
+ * @Last Modified time: 2016-11-16 11:19:50
  */
 
 'use strict';
-
 var path = require("path");
 var assert = require("assert");
 var fs = require("fs");
@@ -45,7 +44,6 @@ Docx.prototype.toFile = function(name, callback) {
 	let _this = this;
 	if (this.path) {
 		_this.exec(tmpname,function(res) {
-
 			_callback(res,_this.toPath);
 		})
 	} else {
@@ -60,7 +58,6 @@ Docx.prototype.toFile = function(name, callback) {
 		});
 	};
 };
-
 
 Docx.prototype.exec = function(filename, callback) {
 	let outfile;

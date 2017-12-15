@@ -1,6 +1,6 @@
 {
   "name": "ht-docx",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "html to docx , htmlstring to docx",
   "main": "index.js",
   "scripts": {
